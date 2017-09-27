@@ -32,7 +32,12 @@
 // Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 
 function showValues( obj ) {
-  // CODE HERE
+  let myArr = []
+  for(var key in obj){
+    myArr.push(obj[key])
+  }
+  myArr = myArr.join("")
+  return myArr
 }
 
 
@@ -41,7 +46,14 @@ function showValues( obj ) {
 
 // Write a function called greaterThan10 that takes in an object. Write a for in loop that loops over the object and changes any value that is great than 10 to 0. Return the updated object.
 
-// CODE HERE
+let greaterThan10 = (obj) => {
+  for(key in obj){
+    if(obj[key] > 10){
+      obj[key] = 0
+    }
+  }
+  return obj
+}
 
 
 

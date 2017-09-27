@@ -37,8 +37,20 @@ var employees = [{
 //  3. Return the updated employee array.
 
 // Code here
-
-
+let employeeUpdater = () => {
+  employees.forEach(obj => {
+    for(let key in obj){
+      // console.log(obj)
+      if(obj["firstName"] === "Theo") {
+        return employees.splice(employees.indexOf(obj), 1)
+      }
+      else if(obj["firstName"] === "Lorie"){
+        obj["department"] = "HR"
+      }
+    }
+  })
+  return employees;
+}
 
 
 
@@ -57,7 +69,24 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 // Code here
 
 
-
+let removeDuplicates = (arr) => {
+  for(var i = 0; i < arr.length; i++){
+    for(var j = 0; j < arr.length; j++){
+      if(j === i) {
+        console.log("variables j and i are equal, j is incrementing")
+        j++
+      }
+      console.log("comparing two values " + arr[i] + " and " + arr[j])
+      if (arr[i] === arr[j]) {
+        console.log(arr + "     removing duplicate: " + arr[i] + " and " + arr[j])
+        arr.splice(j, 1)
+        j--
+      }
+    }
+    console.log("i loop finished i is incrementing")
+  }
+  return arr;
+}
 
 
 
